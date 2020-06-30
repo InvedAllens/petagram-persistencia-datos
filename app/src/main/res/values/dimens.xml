@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="top_card_view">15dp</dimen>
+    <dimen name="bottom_card_view">15dp</dimen>
+    <dimen name="ancho_raiting">70dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="mbottom_datos_cardview">10dp</dimen>
+</resources>
