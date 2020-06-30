@@ -62,7 +62,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             holder.numeroDeRaiteadas.setText(aux);
 
             //cola de mascotas para obtener los ultimos 5 likes en la actividad de favoritos
-            if(favoritos.isEmpty() || favoritos.size()<=3){
+            if(favoritos.isEmpty() || favoritos.size()<=4){
                 favoritos.offer(mascota);
                 mascota.setFavorito(true);
             }else{
