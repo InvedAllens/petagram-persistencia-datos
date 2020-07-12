@@ -3,13 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/search_favoritos"
+        android:id="@+id/contacto_favoritos"
         android:icon="@drawable/ic_search_black_24dp"
-        android:title="@string/item_search"
+        android:title="@string/item_contacto"
         android:visible="true"
-        app:actionViewClass="android.widget.SearchView" />
+         />
 
     <item
         android:title="@string/exit"
-        android:onClick="exit"/>
+        app:showAsAction="never"
+        android:id="@+id/exit_5_mascotas_favoritas"
+        />
 </menu>

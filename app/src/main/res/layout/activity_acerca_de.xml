@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.AcercaDe"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/my_toolbar_about"
+            layout="@layout/action_bar"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?actionBarSize"
+        card_view:cardCornerRadius="@dimen/corner_radius_cardview"
+
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/acerca_de_nosotros"
+                android:textSize="@dimen/tamano_about"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/mbottom_datos_cardview"
+                />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@drawable/avatar"
+                android:contentDescription="@string/imagen_about"
+                android:layout_marginTop="@dimen/mbottom_datos_cardview"
+                />
+
+            <TextView
+                android:id="@+id/tv_nombre_desarrollador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/author"
+                android:textAlignment="center"
+                android:textSize="@dimen/tamano_nombre"
+                android:layout_marginTop="@dimen/mbottom_datos_cardview"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mbottom_datos_cardview"
+                android:text="@string/facultad_de_ingenieria_unnam"
+                android:textSize="@dimen/tamano_datos"
+                android:layout_marginStart="@dimen/text_margin"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mbottom_datos_cardview"
+                android:text="@string/descripcion_about"
+                android:textSize="@dimen/tamano_datos"
+                android:layout_marginStart="@dimen/text_margin"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
