@@ -19,7 +19,7 @@
 <br/>
 				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot5.jpg" alt="drawing" width="300"/>
 <br/>
-				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/petagram.jpg" alt="drawing" width="300"/>
+				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/petagram.jpg" alt="drawing" width="350"/>
 				
  ---
 
