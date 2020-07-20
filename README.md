@@ -13,7 +13,7 @@
 <br/>
 				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot1%20.jpg" alt="drawing" width="300"/>
 <br/>
-				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot4.jpg.jpg" alt="drawing" width="300"/>
+				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot4.jpg" alt="drawing" width="300"/>
 <br/>
 				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot3.jpg" alt="drawing" width="300"/>
 <br/>
