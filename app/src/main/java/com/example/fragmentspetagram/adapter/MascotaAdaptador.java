@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.fragmentspetagram.activities.DetalleMascota;
 import com.example.fragmentspetagram.R;
+import com.example.fragmentspetagram.db.ConstructorMascotas;
 import com.example.fragmentspetagram.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     ArrayList <Mascota> mascotas;
     Activity activity;
     Queue<Mascota> favoritos=new LinkedList<>();
+    Mascota aux;
     public MascotaAdaptador(ArrayList<Mascota> mascotas, Activity activity){
         this.mascotas=mascotas;
         this.activity=activity;
@@ -58,23 +60,25 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         @Override
         public void onClick(View v) {
             Toast.makeText(activity, "Diste like a "+ mascota.getNombreMascota(),Toast.LENGTH_SHORT).show();
-            mascota.setCantidadRaiteada(mascota.getCantidadRaiteada()+1);
-            String aux = String.valueOf(mascota.getCantidadRaiteada());
 
-            holder.numeroDeRaiteadas.setText(aux);
+            ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+            constructorMascotas.darLikeMascota(mascota);
+            holder.numeroDeRaiteadas.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
 
-            //cola de mascotas para obtener los ultimos 5 likes en la actividad de favoritos
-            if(favoritos.isEmpty() || favoritos.size()<=4){
-                favoritos.offer(mascota);
-                mascota.setFavorito(true);
+            /*cola de mascotas para obtener los ultimos 5 likes en la actividad principal,funciona sin guardar los elementos de
+            favoritos cuando se cambia de actividad :/
+            -----------------------------------------------------------------------------------------------
+
+            if((favoritos.isEmpty() || favoritos.size()<=3)&&constructorMascotas.hayEspacioFavoritos()){
+                    favoritos.offer(mascota);
+                    constructorMascotas.ponerFavorito(mascota);
             }else{
-                mascota.setFavorito(true);
-                favoritos.poll().setFavorito(false);
-                favoritos.offer(mascota);
-                //System.out.println(favoritos.poll().getNombreMascota());
-            }
-
-
+                    favoritos.offer(mascota);
+                    constructorMascotas.ponerFavorito(mascota);
+                    aux=favoritos.poll();
+                    constructorMascotas.quitarFavorito(aux);
+                    System.out.println(aux.getNombreMascota());
+            }*/
         }
     });
     }

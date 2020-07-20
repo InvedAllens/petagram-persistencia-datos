@@ -8,7 +8,10 @@ import android.view.MenuItem;
 
 import com.example.fragmentspetagram.R;
 import com.example.fragmentspetagram.adapter.MascotaAdaptador;
+import com.example.fragmentspetagram.adapter.MascotasFavoritasAdaptador;
 import com.example.fragmentspetagram.pojo.Mascota;
+import com.example.fragmentspetagram.presenter.Activity5MascotasFavoritasPresenter;
+import com.example.fragmentspetagram.presenter.IRecyclerViewFragmentPresenter;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -19,14 +22,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Activity5MascotasFavoritas extends AppCompatActivity {
+public class Activity5MascotasFavoritas extends AppCompatActivity implements IActivity5MascotasFavoritasView {
     RecyclerView listaFavoritos;
     ArrayList<Mascota> mascotasFavoritas;
+    private IRecyclerViewFragmentPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_5_mascotas_favoritas);
         Toolbar myToolbar=findViewById(R.id.my_toolbar_favoritos);
+        listaFavoritos=findViewById(R.id.rvMascotasFavoritas);
         if(myToolbar!=null){
             setSupportActionBar(myToolbar);
             ActionBar ab=getSupportActionBar();
@@ -35,16 +40,26 @@ public class Activity5MascotasFavoritas extends AppCompatActivity {
             getSupportActionBar().setTitle("Petagram");
 
         }
-
-
-        listaFavoritos=findViewById(R.id.rvMascotasFavoritas);
+        presenter=new Activity5MascotasFavoritasPresenter(this,this);
+        //ArrayList<Mascota> mascotasFavoritas= (ArrayList<Mascota>) getIntent().getSerializableExtra("mascotas");
+    }
+    @Override
+    public void generarLinerLayoutVertical() {
         LinearLayoutManager mllm=new LinearLayoutManager(this);
         mllm.setOrientation(LinearLayoutManager.VERTICAL);
         listaFavoritos.setLayoutManager(mllm);
+    }
 
-        ArrayList<Mascota> mascotasFavoritas= (ArrayList<Mascota>) getIntent().getSerializableExtra("mascotas");
-        MascotaAdaptador adaptador=new MascotaAdaptador(mascotasFavoritas,this);
+    @Override
+    public MascotasFavoritasAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotasFavoritasAdaptador adaptador=new MascotasFavoritasAdaptador(mascotas,this);
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotasFavoritasAdaptador adaptador) {
         listaFavoritos.setAdapter(adaptador);
+
     }
 
     @Override
@@ -71,4 +86,5 @@ public class Activity5MascotasFavoritas extends AppCompatActivity {
         }
         return true;
     }
+
 }

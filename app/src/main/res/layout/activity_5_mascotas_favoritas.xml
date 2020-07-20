@@ -11,11 +11,28 @@
         android:id="@+id/my_toolbar_favoritos"
         layout="@layout/action_bar"
         />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMascotasFavoritas"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/my_toolbar_favoritos"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        >
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ultimos_5_likes"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/text_margin"
+            android:textSize="@dimen/tamano_nombre"
+
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMascotasFavoritas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/top_card_view" />
+
+    </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -12,16 +12,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.fragmentspetagram.R;
+import com.example.fragmentspetagram.adapter.MascotaAdaptador;
 import com.example.fragmentspetagram.adapter.PerfilAdaptador;
 import com.example.fragmentspetagram.pojo.Mascota;
+import com.example.fragmentspetagram.presenter.IPerfilFragmentPresenter;
+import com.example.fragmentspetagram.presenter.PerfilFragmentPresenter;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
 
-public class PerfilFragment extends Fragment {
+public class PerfilFragment extends Fragment implements IPerfilFragmentView {
     private RecyclerView recyclerView;
     private ArrayList<Mascota> perfilMascota;
     private TextView textView;
+    private IPerfilFragmentPresenter presenter;
     public PerfilFragment() {
         // Required empty public constructor
     }
@@ -32,16 +36,14 @@ public class PerfilFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_perfil, container, false);
         recyclerView=v.findViewById(R.id.rvPerfil);
         textView=v.findViewById(R.id.nombrePerfil);
-        GridLayoutManager mglm=new GridLayoutManager(getContext(),3);
-        //mglm.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(mglm);
+        presenter=new PerfilFragmentPresenter(this,getContext());
 
-        inicializarLista();
-        inicializarAdaptador();
+
+        //inicializarLista();
         // Inflate the layout for this fragment
         return v;
     }
-    public void inicializarLista(){
+   /* public void inicializarLista(){
         perfilMascota = new ArrayList<Mascota>();
         perfilMascota.add(new Mascota("Gucci",R.drawable.puppy1));
         perfilMascota.add(new Mascota("Gucci",R.drawable.puppy1));
@@ -53,9 +55,24 @@ public class PerfilFragment extends Fragment {
 
         textView.setText(perfilMascota.get(0).getNombreMascota());
 
+    }*/
+
+    @Override
+    public void generarGridLayout() {
+        GridLayoutManager mglm=new GridLayoutManager(getContext(),3);
+        //mglm.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mglm);
+
     }
-    public void inicializarAdaptador(){
-        PerfilAdaptador adaptador=new PerfilAdaptador(perfilMascota,getActivity());
+
+    @Override
+    public PerfilAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
+        PerfilAdaptador adaptador=new PerfilAdaptador(mascotas,getActivity());
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(PerfilAdaptador adaptador) {
         recyclerView.setAdapter(adaptador);
     }
 }

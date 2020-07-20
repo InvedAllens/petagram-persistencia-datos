@@ -48,7 +48,9 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:contentDescription="@string/puppy_descripcion"
-                card_view:srcCompat="@drawable/hueso_favorito" />
+                card_view:srcCompat="@drawable/hueso_favorito"
+                android:paddingEnd="@dimen/corner_radius_cardview"
+                />
 
         </LinearLayout>
     </LinearLayout>

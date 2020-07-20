@@ -20,4 +20,5 @@
     <string name="acerca_de_nosotros">Acerca de Nosotros</string>
     <string name="facultad_de_ingenieria_unnam">Facultad de ingenieria UNAM</string>
     <string name="descripcion_about">Desarrollador de aplicasiones en coursera</string>
+    <string name="ultimos_5_likes">Ultimos 5 likes</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.fragmentspetagram.pojo;
 import java.io.Serializable;
 
 public class Mascota implements Serializable {
+    private int idMascota;
     private String nombreMascota;
     private int fotoMascota;
     private int cantidadRaiteada;
@@ -16,6 +17,11 @@ public class Mascota implements Serializable {
 
 
     }
+
+    public Mascota() {
+
+    }
+
     public String getNombreMascota() {
         return nombreMascota;
     }
@@ -47,4 +53,11 @@ public class Mascota implements Serializable {
         this.favorito = favorito;
     }
 
+    public int getIdMascota() {
+        return idMascota;
+    }
+
+    public void setIdMascota(int idMascota) {
+        this.idMascota = idMascota;
+    }
 }
