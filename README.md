@@ -14,6 +14,10 @@
 				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot1%20.jpg" alt="drawing" width="300"/>
 <br/>
 				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot2.jpg" alt="drawing" width="300"/>
+<br/>
+				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/Screenshot3.jpg" alt="drawing" width="300"/>
+<br/>
+				<img src="https://github.com/InvedAllens/petagram-persistencia-datos/blob/master/Screenshots/petagram.jpg" alt="drawing" width="300"/>
  ---
 
 <a href='https://www.freepik.es/fotos-vectores-gratis/perro'>Vector de Perro creado por freepik - www.freepik.es</a>
