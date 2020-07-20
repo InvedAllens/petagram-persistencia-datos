@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:src="@android:drawable/ic_menu_camera"
+        android:src="@drawable/ic_camera"
         android:layout_margin="@dimen/text_margin"
         app:layout_anchor="@id/mviewpager"
         app:layout_anchorGravity="bottom|end"
